@@ -37,52 +37,7 @@
     </div>
 
     <script>
-      document.getElementById('urlForm').addEventListener('submit', shortenUrl);
-      document.getElementById('copyButton').addEventListener('click', copyUrl);
-
-      var allowedKeywords = [
-        "1778396", //1
-        "1891051",
-        "197127",
-        "220046", // biddut
-        "218427",
-        "176457", // jahirul vai
-        "192517",
-        "196394", //imran vasta
-        "197115",
-        "197117",
-        "190964", //Asad
-        "195790",
-        "194620", // mofazzal
-        "147255", // alok
-        "181686", //rishad
-        "193742",
-        "173743", //shohid
-        "189230", // habib vai
-        "153086", // rabbi
-        "165078",
-        "1887736", // amar
-      ]; // Add your desired keywords here
-
-      function shortenUrl(event) {
-        event.preventDefault();
-
-        var longUrlInput = document.getElementById('longUrlInput');
-        var shortUrlContainer = document.getElementById('shortUrlContainer');
-        var shortUrlInput = document.getElementById('shortUrlInput');
-        var errorContainer = document.getElementById('errorContainer');
-        var errorMessage = document.getElementById('errorMessage');
-
-        var longUrl = longUrlInput.value;
-
-        var containsKeyword = allowedKeywords.some(keyword => longUrl.includes(keyword));
-
-        if (!containsKeyword) {
-          showError('Your CPA profile is not registered');
-          return;
-        }
-
-        var apiUrl = 'https://kingurl.x10.bz/api.php?url=' + encodeURIComponent(longUrl);
+    var apiUrl = 'https://kingurl.x10.bz/api.php?url=' + encodeURIComponent(longUrl);
 
         fetch(apiUrl)
           .then(response => response.json())
